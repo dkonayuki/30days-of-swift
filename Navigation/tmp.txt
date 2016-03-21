@@ -1,0 +1,122 @@
+//
+//  ViewController.swift
+//  Navigation2
+//
+//  Created by Le Nhu Ngoc on 3/21/16.
+//  Copyright (c) 2016 ChillBears. All rights reserved.
+//
+
+import UIKit
+import AVFoundation
+import MediaPlayer
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var playButton: UIButton!
+    @IBAction func buttonPressed(sender: UIButton) {
+        toggle()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureView()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    var player = AVPlayer()
+    
+    func toggle() {
+        if playButton.titleLabel?.text == "Play" {
+            playRadio()
+        } else {
+            pauseRadio()
+        }
+    }
+    
+    func playRadio() {
+        player.play()
+        playButton.setTitle("Pause", forState: UIControlState.Normal)
+    }
+    
+    func pauseRadio() {
+        player.pause()
+        playButton.setTitle("Play", forState: UIControlState.Normal)
+    }
+    
+    func configureView() {
+        
+        let data = getJSON("http://localhost:8000/api/v1.0/radios/33")
+        /*
+        let myUrl = NSURL(string: "http://localhost:8000/api/v1.0/radios/33")
+        
+        let task = NSURLSession.sharedSession().dataTaskWithURL(myUrl!) {(data, response, error) in
+            let json = NSString(data: data, encoding: NSUTF8StringEncoding)
+            let dic = self.parseJSON(data)
+            
+            println(dic["stream_url"])
+        }
+        
+        task.resume()
+
+        
+        //let url = "http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1_mf_q?s=1457608133&e=1457622533&h=0f160d6d366f473fdce7176dba7c833d"
+        let url = dic["stream_url"]
+        
+        let playerItem = AVPlayerItem( URL:NSURL( string:url )! )
+        player = AVPlayer(playerItem:playerItem)
+        player.rate = 1.0
+*/
+    }
+    
+    func getJSON(urlToRequest: String) {
+        let url = NSURL(string: urlToRequest)
+        let request = NSURLRequest(URL: url!)
+        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+        let session = NSURLSession(configuration: config)
+        
+        let task = session.dataTaskWithRequest(request, completionHandler: handler);
+        
+        // do whatever you need with the task e.g. run
+        task.resume()
+    }
+    
+    func handler (data: NSData!, response: NSURLResponse!, error: NSError!) {
+        // notice that I can omit the types of data, response and error
+        let json = NSString(data: data, encoding: NSUTF8StringEncoding)
+        let dic = parseJSON(data)
+        let url = dic["stream_url"]
+        println(url)
+        
+        //let playerItem = AVPlayerItem( URL:NSURL( string:url )! )
+        //player = AVPlayer(playerItem:playerItem)
+        //player.rate = 1.0
+    }
+    
+    func parseJSON(inputData: NSData) -> NSDictionary{
+        var error: NSError?
+        var boardsDictionary: NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as! NSDictionary
+        
+        return boardsDictionary
+    }
+
+
+}
+
+
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
