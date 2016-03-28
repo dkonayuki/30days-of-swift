@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8JR-iM-qeO">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Ye2-O1-Xxz">
+            <objects>
+                <viewController id="jWm-Id-QDJ" customClass="ViewController" customModule="CoreDataTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dtU-Xg-1Ug"/>
+                        <viewControllerLayoutGuide type="bottom" id="2au-BA-du4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="94n-aF-yP8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6jC-22-2Ow">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="jWm-Id-QDJ" id="5xT-HP-JZx"/>
+                                    <outlet property="delegate" destination="jWm-Id-QDJ" id="xPw-94-cnT"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2au-BA-du4" firstAttribute="top" secondItem="6jC-22-2Ow" secondAttribute="bottom" id="LHr-rF-3tf"/>
+                            <constraint firstItem="6jC-22-2Ow" firstAttribute="leading" secondItem="94n-aF-yP8" secondAttribute="leadingMargin" constant="-20" id="NBy-CK-Tmf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6jC-22-2Ow" secondAttribute="trailing" constant="-20" id="VaN-Ps-Ku7"/>
+                            <constraint firstItem="6jC-22-2Ow" firstAttribute="top" secondItem="dtU-Xg-1Ug" secondAttribute="bottom" id="zFW-gs-oYB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0nK-e0-tps">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="01s-SN-hAh">
+                            <connections>
+                                <action selector="addName:" destination="jWm-Id-QDJ" id="e2q-ig-27N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameTable" destination="6jC-22-2Ow" id="uj8-zP-hJy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ax0-Od-eFJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1301" y="461"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="85F-vV-Ay4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8JR-iM-qeO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WP3-pk-BW6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jWm-Id-QDJ" kind="relationship" relationship="rootViewController" id="d1h-O6-Dnx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iNn-ic-qqO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="489" y="461"/>
+        </scene>
+    </scenes>
+</document>
