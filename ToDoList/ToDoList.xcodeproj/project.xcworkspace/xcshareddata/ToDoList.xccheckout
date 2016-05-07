@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FBE0FE24-7816-4BB4-9EB2-A7467AEE97E2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ToDoList</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FAC393B2A40442861B04F97BBD36389C89DD6F63</key>
+		<string>https://github.com/dkonayuki/30days-of-swift.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ToDoList/ToDoList.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FAC393B2A40442861B04F97BBD36389C89DD6F63</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/dkonayuki/30days-of-swift.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FAC393B2A40442861B04F97BBD36389C89DD6F63</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FAC393B2A40442861B04F97BBD36389C89DD6F63</string>
+			<key>IDESourceControlWCCName</key>
+			<string>30DaysOfSwift</string>
+		</dict>
+	</array>
+</dict>
+</plist>
